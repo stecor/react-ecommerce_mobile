@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../logo.svg';
 import styled from 'styled-components';
+import { ButtonContainer } from './Button';
 
 class Navbar extends Component {
 
@@ -19,11 +20,10 @@ class Navbar extends Component {
           </li>
         </ul>
         <Link to="/cart" className="ml-auto">
-          <ButtonContainer className="mr-2">
-            <span>
+          <ButtonContainer >
+            <span className="mr-2">
               <i className="fas fa-cart-plus"/>
             </span>
-
             My cart
           </ButtonContainer>
         </Link>
@@ -32,11 +32,6 @@ class Navbar extends Component {
   }
 }
 
-const ButtonContainer = styled.button`
-      text-transform: capitalize;
-      font-size: 1rem;
-      background: transparent;
-      border:3px solid var(--mainBlue);
-`;
+
 
 export default Navbar;
