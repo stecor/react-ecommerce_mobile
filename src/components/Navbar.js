@@ -8,7 +8,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <NavWrapper className="navbar navbar-expand-sm navbar-dark ps-sm-5">
+      <NavWrapper className="navbar navbar-expand-sm navbar-dark ps-sm-5 shadow-lg">
         <Link to="/">
           <img src={logo} alt="store" className="navbar-brand"/>
         </Link>
@@ -20,7 +20,7 @@ class Navbar extends Component {
           </li>
         </ul>
         <Link to="/cart" className="ml-auto">
-          <ButtonContainer >
+          <ButtonContainer className="shadow-lg">
             <span className="mr-2">
               <i className="fas fa-cart-plus"/>
             </span>
