@@ -27,7 +27,7 @@ class Details extends Component {
                 {/* Product text */}
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                   <h4>Model : {title}</h4>
-                  <h6 className="text-title text-uppercase text-muted mt-3 mb2">Made by : <span className="text-uppercase">company</span></h6>
+                  <h6 className="text-title text-uppercase text-muted mt-3 mb2">Made by : <span className="text-uppercase">{company}</span></h6>
                   <h6 className="text-blue">
                      <strong>
                        Price : <span>$</span>{price}
@@ -43,9 +43,19 @@ class Details extends Component {
                    <div>
                       <Link to="/">
                         <ButtonContainer>
-
+                          Back to Products
                         </ButtonContainer>
                       </Link>
+
+                      <ButtonContainer
+                        cart
+                        disabled = {inCart? true: false}
+                        onClick = {()=>{
+                          value.addToCart(id)
+                        }}
+                        >
+                          {inCart? "inCart": "add to cart"}
+                      </ButtonContainer>
                    </div>
                 </div>
               </div>
