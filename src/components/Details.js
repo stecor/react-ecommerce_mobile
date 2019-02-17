@@ -14,21 +14,26 @@ class Details extends Component {
           <div className="container py-5">
               {/* title */}
               <div className="row">
-                <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
+                <div className="col-10 mx-auto text-center text-slanted text-muted my-5">
                   <h1>{title}</h1>
                 </div>
               </div>
               {/* end title */}
               {/* Product Info */}
               <div className="row">
-                <div className="col-10 mx-auto col-md-6 my-3">
-                  <img src={img} alt="product" className="img-fluid"/>
+                <div className="col-10 mx-auto col-md-6 my-3 ">
+                  <img
+                    src={img}
+                    alt="product"
+                    className="img-fluid detail-zoom"
+                    style={{borderRadius:'30px'}}
+                    />
                 </div>
                 {/* Product text */}
-                <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+                <div className="col-10 mx-auto col-md-6 my-3 text-capitalize text-bright">
                   <h4>Model : {title}</h4>
                   <h6 className="text-title text-uppercase text-muted mt-3 mb2">Made by : <span className="text-uppercase">{company}</span></h6>
-                  <h6 className="text-blue">
+                  <h6 className="text-yellow">
                      <strong>
                        Price : <span>$</span>{price}
                      </strong>
@@ -42,12 +47,13 @@ class Details extends Component {
                    {/* buttons */}
                    <div>
                       <Link to="/">
-                        <ButtonContainer>
+                        <ButtonContainer className="shadow-lg">
                           Back to Products
                         </ButtonContainer>
                       </Link>
 
                       <ButtonContainer
+                        className="shadow-lg"
                         cart
                         disabled = {inCart? true: false}
                         onClick = {()=>{
